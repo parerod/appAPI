@@ -1,5 +1,9 @@
-<ion-item>
+<ion-item [detail]="false">
   <ion-label>
-    Hola a todos
+    <h2>
+      {{piloto.givenName}}
+    </h2>
+    <br />
+    <h3>{{piloto.nationality}}</h3>
   </ion-label>
 </ion-item>
