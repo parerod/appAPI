@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      API Formula 1
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,7 +13,8 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-list>
-    <app-listado *ngFor="let pilot of pilotos" [piloto] = "pilot"></app-listado>
-  </ion-list>
+  
+<app-listado *ngFor="let pilot of pilotos" [driverId] = "pilot.driverId"  [givenName] = "pilot.givenName" [familyName] = "pilot.familyName"></app-listado>
+  
 </ion-content>
+

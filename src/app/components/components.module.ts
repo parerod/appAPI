@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { HomePageRoutingModule } from '../home/home-routing.module';
 import { ListadoComponent } from './listado/listado.component';
+import { DetalleComponent } from './detalle/detalle.component';
 
 
 
 @NgModule({
-  declarations: [ListadoComponent],
-  exports: [ListadoComponent],
+  declarations: [ListadoComponent, DetalleComponent],
+  exports: [ListadoComponent, DetalleComponent],
   imports: [
     CommonModule,
     IonicModule,

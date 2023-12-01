@@ -20,13 +20,16 @@ export class HomePage {
   ngOnInit() {
     this.servi.getAll().subscribe(
 
-      (resp) => {
+      (resp: ApiResponse) => {
 
         this.api = resp;
+        this.pilotos = this.api.MRData.DriverTable.Drivers
 
     });
 
-    this.pilotos = this.api.MRData.DriverTable.Drivers
+    
+
+    
   }
 
 }
