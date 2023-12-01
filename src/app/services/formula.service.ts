@@ -14,4 +14,9 @@ export class FormulaService {
   public getAll():Observable<ApiResponse>{
     return this.http.get<ApiResponse>(`${environment.apiURL}/drivers.json?limit=900`);
   }
+
+  public getOne(id: string): Observable<ApiResponse>{
+
+    return this.http.get<ApiResponse>(`${environment.apiURL}/drivers/${id}.json`);
+  }
 }
