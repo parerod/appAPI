@@ -1,5 +1,4 @@
-import { Component, inject, Input, OnInit } from '@angular/core';
-import { Driver } from 'src/app/interfaces/driver';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-listado',
@@ -8,17 +7,14 @@ import { Driver } from 'src/app/interfaces/driver';
 })
 export class ListadoComponent  implements OnInit {
 
-  @Input() driverId : string = "";
-  /*@Input() permanentNumber: string;
-  @Input() code: string;
-  @Input() url: string;*/
-  @Input() givenName: string = "";
-  @Input() familyName: string = "";
-  /*@Input() dateOfBirth: string;
-  @Input() nationality: string;*/
+  
 
   constructor() { }
 
   ngOnInit() {}
+
+  @Input() driverId : string = "";
+  @Input() givenName: string = "";
+  @Input() familyName: string = "";
 
 }

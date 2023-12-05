@@ -14,7 +14,7 @@ export class DetallePage implements OnInit {
   id : string;
   api!: ApiResponse;
 
-  pilotos! : Driver[];
+  piloto! : Driver[];
 
   constructor(private servi : FormulaService, private route: ActivatedRoute) { 
     this.id = route.snapshot.paramMap.get('id')!;
@@ -28,7 +28,8 @@ export class DetallePage implements OnInit {
       (resp) => {
 
         this.api = resp;
-        this.pilotos = this.api.MRData.DriverTable.Drivers
+        this.piloto = this.api.MRData.DriverTable.Drivers
+        console.log("un solo piloto",this.piloto);
     });
   }
 

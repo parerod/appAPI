@@ -11,7 +11,8 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-detalle *ngFor="let pilot of pilotos" ></app-detalle>
+<app-detalles *ngFor="let pilot of piloto" [driverId] = "pilot.driverId" [permanentNumber] = "pilot.permanentNumber" [code] = "pilot.code" [url] = "pilot.url" [givenName] = "pilot.givenName" [familyName] = "pilot.familyName" [dateOfBirth] = "pilot.dateOfBirth" [nationality] = "pilot.nationality"></app-detalles>
+
 
 
   
