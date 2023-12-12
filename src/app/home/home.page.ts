@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormulaService } from '../services/formula.service';
 import { ApiResponse } from '../interfaces/ApiResponse';
 import { Driver } from '../interfaces/driver';
+import { LoadingController } from '@ionic/angular';
 
 
 @Component({
@@ -15,9 +16,35 @@ export class HomePage {
 
   pilotos! : Driver[];
 
-  constructor(private servi : FormulaService) {}
+  loading: HTMLIonLoadingElement | undefined;
+
+
+  constructor(private servi : FormulaService, private loadingCtrl: LoadingController) {}
 
   ngOnInit() {
+    this.showLoading()
+
+    
+
+    
+  }
+
+  showLoading() {
+    this.loadingCtrl.create({
+      message: 'Cargando datos...'
+    }).then(s => {
+      this.loading = s;
+      this.loading.present().then(f => {
+
+        this.cargardatos();
+
+      });
+    }
+    )
+
+  }
+
+  cargardatos() {
     this.servi.getAll().subscribe(
 
       (resp: ApiResponse) => {
@@ -25,11 +52,9 @@ export class HomePage {
         this.api = resp;
         this.pilotos = this.api.MRData.DriverTable.Drivers
 
+        this.loading?.dismiss();
+
+
     });
-
-    
-
-    
   }
-
 }
