@@ -45,6 +45,42 @@ export class HomePage {
   }
 
   cargardatos() {
+
+    const nuevoDrive : Driver = {
+      driverId: String(null),
+      permanentNumber: "32",
+      code: "PEP",
+      url : "kdfksdfsf",
+      givenName : "Pepe",
+      familyName : "Arenas",
+      dateOfBirth : "14/10/04",
+      nationality : "Spanish"
+    };
+
+    this.servi.post(nuevoDrive).subscribe(
+      (resp) => {
+
+      }
+    );
+
+
+
+    /*this.servi.put("abate",nuevoDrive).subscribe(
+      (resp) => {
+        
+
+      }
+    );*/
+
+    /*this.servi.delete("abate").subscribe(
+
+      (resp) => {
+        console.log("He borrado a abate")
+      }
+    );*/
+
+    //this.servi.post()
+
     this.servi.getAll().subscribe(
 
       (resp: ApiResponse) => {
